@@ -33,9 +33,9 @@ var allOuters = [
     [3, 2, 3, 1, 1, 1, 1, 1, 1], // 23
     [1, 3, 3, 1, 1, 1, 1, 1, 1], // 24
     [2, 3, 3, 1, 1, 1, 1, 1, 1], // 25
-    [1, 1, 1, 1, 2, 1, 1, 1, 1], // ?
-    [1, 1, 1, 1, 2, 1, 1, 1, 1], // ?
-    [1, 1, 1, 1, 2, 1, 1, 1, 1], // ?
+    [1, 1, 1, 1, 1, 1, 1, 1, 2], // ?
+    [1, 1, 1, 1, 1, 1, 1, 1, 2], // ?
+    [1, 1, 1, 1, 1, 1, 1, 1, 2], // ?
     // [3, 3, 3, 3, 3, 3, 3, 3, 3] // need 27
 ]
 
@@ -51,7 +51,7 @@ function startPlayOuters()
 
 function playCurrentOuters() {
     if (minOuterIndex <= currentOuterIndex && currentOuterIndex <= maxOuterIndex) {
-        playSound(allOuters[currentOuterIndex]);
+        playSound(turnArrayToOuter(allOuters[currentOuterIndex]));
         currentOuterIndex++;
     } else {
         currentOuterIndex = minOuterIndex;
