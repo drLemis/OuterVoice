@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>OuterVoice</title>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            text-align: center;
+        }
+
+        canvas {
+            width: 95%;
+            height: 95%;
+            border: 1px solid grey;
+            background-color: #050505;
+        }
+
+        .footer {
+            position: fixed;
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<div class="footer">
+    2019.05.28, v1.0
+</div>
+
+<body onload="init()">
+    <canvas id="graphCanvas" onclick="startPlayOuters()" style="min-width: 500px;min-height: 500px"/>
+    <br>
+    <br>
+</body>
+
+</html>
+
+<script src="js/math.js "></script>
+<script src="js/outer.js "></script>
+<script src="js/sound.js "></script>
+<script src="js/draw.js "></script>
