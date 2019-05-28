@@ -52,7 +52,7 @@ function drawSine() {
     ctx.lineWidth = 2;
     ctx.strokeStyle = "rgb(146,146,146)";
 
-    var x = width * 0.33;
+    var x = 0;
     var y = canvas.height;
     var amplitude = height;
     var frequency = 1 / hZ;
@@ -62,7 +62,7 @@ function drawSine() {
         amplitude = height / 20;
     }
 
-    while (x < width * 0.66) {
+    while (x < width) {
         y = height + amplitude * Math.sin((x + xOffset) / frequency);
         ctx.lineTo(x, y);
         x++;
@@ -73,12 +73,12 @@ function drawSine() {
     xOffset += frequency;
 
     ctx.fillStyle = "#555555";
-    ctx.fillRect(width * (1 / 6), height * 2, width * 0.66, 16);
+    ctx.fillRect(0, height * 2, width, 32);
 
     ctx.fillStyle = "#FFFFFF";
     ctx.textAlign = "center";
-    ctx.font = "16px Consolas";
-    ctx.fillText(freqsAsText, width * 0.5, height * 2 + 12);
+    ctx.font = "32px Consolas";
+    ctx.fillText(freqsAsText, width * 0.5, height * 2 + 24);
 }
 
 function drawPlayerSine() {
@@ -89,7 +89,7 @@ function drawPlayerSine() {
     ctx.lineWidth = 2;
     ctx.strokeStyle = "rgb(146,146,146)";
 
-    var x = width * 0.33;
+    var x = 0;
     var y = canvas.height;
     var amplitude = height;
     var frequency = 1 / playerHZ;
@@ -99,7 +99,7 @@ function drawPlayerSine() {
         amplitude = height / 20;
     }
 
-    while (x < width * 0.66) {
+    while (x < width) {
         y = height + amplitude * Math.sin((x + playerXOffset) / frequency) + height * 4;
         ctx.lineTo(x, y);
         x++;
@@ -110,12 +110,12 @@ function drawPlayerSine() {
     playerXOffset += frequency;
 
     ctx.fillStyle = "#555555";
-    ctx.fillRect(width * (1 / 6), height * 4 - 16, width * 0.66, 16);
+    ctx.fillRect(0, height * 3.5 - 32, width, 32);
 
     ctx.fillStyle = "#FFFFFF";
     ctx.textAlign = "center";
-    ctx.font = "16px Consolas";
-    ctx.fillText(playerFreqsAsText, width * 0.5, height * 4 - 4);
+    ctx.font = "32px Consolas";
+    ctx.fillText(playerFreqsAsText, width * 0.5-16, height * 4 - 20);
 }
 
 function drawPlayerButtons() {
@@ -127,34 +127,35 @@ function drawPlayerButtons() {
     ctx.strokeStyle = "#050505";
     ctx.fillStyle = "rgb(88,88,88)";
 
-    ctx.fillRect(width * (1 / 6), height * 4 + 1, width * (1 / 6) - 16, height / 2);
-    ctx.strokeRect(width * (1 / 6), height * 4 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.fillRect(width * (0 / 6), height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.strokeRect(width * (0 / 6), height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
 
-    ctx.fillRect(width * (1 / 6), height * 4.5 + 1, width * (1 / 6) - 16, height / 2);
-    ctx.strokeRect(width * (1 / 6), height * 4.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.fillRect(width * (1 / 6) - 16, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.strokeRect(width * (1 / 6) - 16, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
 
-    ctx.fillRect(width * (1 / 6), height * 5 + 1, width * (1 / 6) - 16, height / 2);
-    ctx.strokeRect(width * (1 / 6), height * 5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.fillRect(width * (2 / 6) - 32, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.strokeRect(width * (2 / 6) - 32, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
 
-    ctx.fillRect(width * (1 / 6), height * 5.5 + 1, width * (1 / 6) - 16, height / 2);
-    ctx.strokeRect(width * (1 / 6), height * 5.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.fillRect(width * (3 / 6) - 48, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.strokeRect(width * (3 / 6) - 48, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
 
 
-    ctx.fillRect(width * (4 / 6), height * 4 + 1, width * (1 / 6) - 16, height / 2);
-    ctx.strokeRect(width * (4 / 6), height * 4 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.fillRect(width * (5 / 6) + 16, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.strokeRect(width * (5 / 6) + 16, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
+
+    ctx.fillRect(width * (4 / 6) + 32, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
+    ctx.strokeRect(width * (4 / 6) + 32, height * 3.5 + 1, width * (1 / 6) - 16, height / 2);
     
-    ctx.fillRect(width * (4 / 6), height * 5.5 + 1, width * (1 / 6) - 16, height / 2);
-    ctx.strokeRect(width * (4 / 6), height * 5.5 + 1, width * (1 / 6) - 16, height / 2);
 
     ctx.fillStyle = "#FFFFFF";
     ctx.textAlign = "center";
     ctx.font = "32px Consolas";
 
-    ctx.fillText("880", width * (1.5 / 6), height * 4.3);
-    ctx.fillText("440", width * (1.5 / 6), height * 4.8);
-    ctx.fillText("220", width * (1.5 / 6), height * 5.3);
-    ctx.fillText("000", width * (1.5 / 6), height * 5.8);
+    ctx.fillText("880", width * (0.45 / 6), height * 3.8);
+    ctx.fillText("440", width * (1.45 / 6) - 16, height * 3.8);
+    ctx.fillText("220", width * (2.45 / 6) - 32, height * 3.8);
+    ctx.fillText("000", width * (3.45 / 6) - 48, height * 3.8);
     
-    ctx.fillText("SND", width * (4.5 / 6), height * 4.3);
-    ctx.fillText("DEL", width * (4.5 / 6), height * 5.8);
+    ctx.fillText("SND", width * (4.55 / 6) + 16, height * 3.8);
+    ctx.fillText("DEL", width * (5.35 / 6) + 32, height * 3.8);
 }
