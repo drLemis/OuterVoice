@@ -3,8 +3,18 @@ var playing = false;
 var soundTime = 300; // 300
 var pauseTime = 33; // 33
 
+var audioCtx;
+var oscillator;
+var volume;
+
 function setPlaying(bool) {
     playing = bool;
+}
+
+function stopPlaying() {
+    playing = false;
+    
+    oscillator.stop(0);
 }
 
 function playSound(freqs) {
@@ -13,9 +23,9 @@ function playSound(freqs) {
         dropFreqToText();
 
         setPlaying(true);
-        var audioCtx = new AudioContext();
-        var oscillator = audioCtx.createOscillator();
-        var volume = audioCtx.createGain();
+        audioCtx = new AudioContext();
+        oscillator = audioCtx.createOscillator();
+        volume = audioCtx.createGain();
 
         volume.gain.value = 0.5;
         oscillator.connect(volume);

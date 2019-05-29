@@ -39,10 +39,19 @@ var allOuters = [
     // [3, 3, 3, 3, 3, 3, 3, 3, 3] // need 27
 ]
 
+// [1, 1, 1, 1, 1, 1, 1, 1, 2], // ?
+// [1, 1, 1, 1, 1, 1, 1, 1, 3], // =
+// [1, 1, 1, 1, 1, 1, 1, 2, 1], // -
+// [1, 1, 1, 1, 1, 1, 1, 2, 2], // /
+// [1, 1, 1, 1, 1, 1, 1, 3, 1], // +
+// [1, 1, 1, 1, 1, 1, 2, 3, 2], // *
+
 function startPlayOuters()
 {
+    bIntroRemove = true;
     if (!started)
     {
+        Noise.play(noise);
         started = true;
         playCurrentOuters();
         setInterval(playCurrentOuters, (soundTime + pauseTime) * 12);
